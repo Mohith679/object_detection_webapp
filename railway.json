@@ -2,7 +2,7 @@
   "build": {
     "builder": "nixpacks",
     "config": {
-      "startCommand": "waitress-serve --port=$PORT app:app"
+      "startCommand": "gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 2 app:app"
     }
   }
 }
