@@ -3,7 +3,8 @@
   "build": {
     "builder": "nixpacks",
     "config": {
-      "installCommand": "pip install -r requirements.txt",
+      "setupCommand": "apt-get update && apt-get install -y python3-distutils",
+      "installCommand": "python -m pip install --upgrade pip && pip install -r requirements.txt",
       "startCommand": "gunicorn --bind 0.0.0.0:$PORT --workers 1 app:app"
     }
   }
