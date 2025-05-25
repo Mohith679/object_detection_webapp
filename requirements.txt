@@ -1,6 +1,6 @@
 flask==2.3.2
 waitress==3.0.2
 opencv-python-headless==4.7.0.72
-ultralytics==8.0.0
-numpy==1.25.2  # Updated version
-setuptools==68.2.2
+ultralytics==8.0.0 --no-deps
+torch==2.0.1+cpu --index-url https://download.pytorch.org/whl/cpu
+numpy==1.25.2
