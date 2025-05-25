@@ -2,11 +2,13 @@ services:
   - type: web
     name: object-detection-webapp
     runtime: python
-    env: python
+    pythonVersion: "3.9.7"
     buildCommand: |
+      wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt -O yolov8n.pt
+      pip install --upgrade pip
       pip install -r requirements.txt
-    startCommand: |
-      waitress-serve --port=$PORT app:app
+    startCommand: waitress-serve --port=$PORT app:app
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.9.7
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    plan: free
