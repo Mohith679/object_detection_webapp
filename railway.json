@@ -1,0 +1,14 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "nixpacks",
+    "config": {
+      "installCommand": "python -m pip install --upgrade pip && pip install -r requirements.txt",
+      "buildCommand": "wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt -O yolov8n.pt",
+      "startCommand": "waitress-serve --port=$PORT app:app"
+    }
+  },
+  "deploy": {
+    "startCommand": "waitress-serve --port=$PORT app:app"
+  }
+}
