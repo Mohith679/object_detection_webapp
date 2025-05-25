@@ -3,3 +3,4 @@ gunicorn==20.1.0
 opencv-python==4.7.0.72
 ultralytics==8.0.0
 numpy==1.24.3
+waitress==3.0.2  # Backup option
